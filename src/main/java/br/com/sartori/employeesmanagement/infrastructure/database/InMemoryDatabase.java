@@ -20,11 +20,11 @@ public class InMemoryDatabase {
 
 
     public EmployeeEntity findById(Integer id) {
-        try {
-            return database.get(id - 1);
-        } catch (IndexOutOfBoundsException e){
-            throw new EntityNotFoundException("Funcionário não encontrado");
+        List<EmployeeEntity> filtred = database.stream().filter(entity -> entity.getId().equals(id)).toList();
+        if(!filtred.isEmpty()){
+            return filtred.get(0);
         }
+        throw new EntityNotFoundException("Funcionário não encontrado");
     }
 
     public List<EmployeeEntity> findAll() {
