@@ -13,7 +13,7 @@ public class FindEmployeeByIdUseCase implements FindEmployeeByIdInputPort {
     }
 
     @Override
-    public Employee findById(String id) {
+    public Employee findById(Integer id) {
         return findEmployeeByIdOutputPort.findById(id);
     }
 }

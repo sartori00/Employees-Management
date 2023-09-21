@@ -1,6 +1,7 @@
 package br.com.sartori.employeesmanagement.infrastructure.database;
 
 import br.com.sartori.employeesmanagement.application.core.domain.Employee;
+import br.com.sartori.employeesmanagement.infrastructure.database.entity.EmployeeEntity;
 import br.com.sartori.employeesmanagement.infrastructure.database.mapper.EmployeeEntityMapper;
 import br.com.sartori.employeesmanagement.infrastructure.database.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,5 +22,11 @@ public class InMemoryDataBaseImpl implements EmployeeRepository {
         var entity = mapper.toEntity(employee);
         var saved = database.save(entity);
         return mapper.toDomain(saved);
+    }
+
+    @Override
+    public Employee findById(Integer id) {
+        EmployeeEntity employee = database.findById(id);
+        return mapper.toDomain(employee);
     }
 }

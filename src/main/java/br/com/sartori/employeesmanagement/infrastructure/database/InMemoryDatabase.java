@@ -1,5 +1,6 @@
 package br.com.sartori.employeesmanagement.infrastructure.database;
 
+import br.com.sartori.employeesmanagement.application.core.exceptions.EntityNotFoundException;
 import br.com.sartori.employeesmanagement.infrastructure.database.entity.EmployeeEntity;
 import org.springframework.stereotype.Component;
 
@@ -18,4 +19,11 @@ public class InMemoryDatabase {
     }
 
 
+    public EmployeeEntity findById(Integer id) {
+        try {
+            return database.get(id - 1);
+        } catch (IndexOutOfBoundsException e){
+            throw new EntityNotFoundException("Funcionário não encontrado");
+        }
+    }
 }
