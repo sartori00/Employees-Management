@@ -1,4 +1,12 @@
 package br.com.sartori.employeesmanagement.adapters.in.controller.dto.request;
 
-public record AddressRequest(String street, Long number, String district, String city, String state, String zipCode) {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+
+public record AddressRequest(@NotBlank String street,
+                             @Positive Long number,
+                             @NotBlank String district,
+                             @NotBlank String city,
+                             @NotBlank String state,
+                             @NotBlank String zipCode) {
 }
