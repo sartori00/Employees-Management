@@ -6,11 +6,11 @@ public class Phone {
 
     private PhoneType phoneType;
 
-    private String phone;
+    private String phoneNumber;
 
-    public Phone(PhoneType phoneType, String phone) {
+    public Phone(PhoneType phoneType, String phoneNumber) {
         this.phoneType = phoneType;
-        this.phone = phone;
+        this.phoneNumber = phoneNumber;
     }
 
     public Phone() {
@@ -24,11 +24,11 @@ public class Phone {
         this.phoneType = phoneType;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

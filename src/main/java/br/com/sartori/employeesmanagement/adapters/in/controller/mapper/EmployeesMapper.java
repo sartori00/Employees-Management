@@ -38,7 +38,7 @@ public class EmployeesMapper {
 
     private List<Phone> toEmployeePhones(List<PhoneRequest> phones) {
         return phones.stream()
-                .map(number -> new Phone(number.phoneType(), number.phone()))
+                .map(number -> new Phone(number.phoneType(), number.phoneNumber()))
                 .collect(Collectors.toList());
     }
 
