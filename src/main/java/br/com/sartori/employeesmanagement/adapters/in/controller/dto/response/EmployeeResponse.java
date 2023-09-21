@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public record EmployeeResponse(Long id, String fullName, Occupation occupation, BigDecimal salary, List<PhoneResponse> phones, AddressResponse address) {
+public record EmployeeResponse(Integer id, String fullName, Occupation occupation, BigDecimal salary, List<PhoneResponse> phones, AddressResponse address) {
     public EmployeeResponse(Employee employee) {
         this(employee.getId(), employee.getFullName(), employee.getOccupation(), employee.getSalary(), employee.getPhones().stream().map(PhoneResponse::new).collect(Collectors.toList()), new AddressResponse(employee.getAddress()));
     }

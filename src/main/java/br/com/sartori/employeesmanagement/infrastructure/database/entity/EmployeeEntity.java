@@ -14,7 +14,7 @@ import java.util.List;
 @Builder
 public class EmployeeEntity {
 
-    private Long id;
+    private Integer id;
 
     private String fullName;
 

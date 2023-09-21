@@ -10,10 +10,10 @@ import java.util.List;
 @Component
 public class InMemoryDatabase {
 
-    private static List<EmployeeEntity> database = new ArrayList<>();
+    private static final List<EmployeeEntity> database = new ArrayList<>();
 
     public EmployeeEntity save(EmployeeEntity employeeEntity){
-        employeeEntity.setId(Long.valueOf(database.size() + 1));
+        employeeEntity.setId(database.size() + 1);
         database.add(employeeEntity);
         return employeeEntity;
     }
@@ -29,5 +29,16 @@ public class InMemoryDatabase {
 
     public List<EmployeeEntity> findAll() {
         return database;
+    }
+
+    public EmployeeEntity update(EmployeeEntity entity) {
+        var finded = this.findById(entity.getId());
+        finded.setFullName(entity.getFullName());
+        finded.setOccupationName(entity.getOccupationName());
+        finded.setSalary(entity.getSalary());
+        finded.getPhones().clear();
+        finded.setPhones(entity.getPhones());
+        finded.setAddress(entity.getAddress());
+        return finded;
     }
 }

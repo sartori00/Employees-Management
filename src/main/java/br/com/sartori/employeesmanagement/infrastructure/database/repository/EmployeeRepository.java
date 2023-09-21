@@ -11,4 +11,6 @@ public interface EmployeeRepository {
     Employee findById(Integer id);
 
     List<Employee> findAll();
+
+    Employee update(Employee employee);
 }

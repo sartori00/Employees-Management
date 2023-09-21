@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Employee {
 
-    private Long id;
+    private Integer id;
 
     private String fullName;
 
@@ -19,7 +19,7 @@ public class Employee {
 
     private Address address;
 
-    public Employee(Long id, String fullName, Occupation occupation, BigDecimal salary, List<Phone> phones, Address address) {
+    public Employee(Integer id, String fullName, Occupation occupation, BigDecimal salary, List<Phone> phones, Address address) {
         this.id = id;
         this.fullName = fullName;
         this.occupation = occupation;
@@ -31,11 +31,11 @@ public class Employee {
     public Employee() {
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

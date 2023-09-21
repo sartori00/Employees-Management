@@ -38,4 +38,11 @@ public class InMemoryDataBaseImpl implements EmployeeRepository {
         var entities = database.findAll();
         return entities.stream().map(entity -> mapper.toDomain(entity)).collect(Collectors.toList());
     }
+
+    @Override
+    public Employee update(Employee employee) {
+        var entity = mapper.toEntity(employee);
+        var saved = database.update(entity);
+        return mapper.toDomain(saved);
+    }
 }
