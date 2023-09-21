@@ -26,4 +26,8 @@ public class InMemoryDatabase {
             throw new EntityNotFoundException("Funcionário não encontrado");
         }
     }
+
+    public List<EmployeeEntity> findAll() {
+        return database;
+    }
 }

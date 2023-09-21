@@ -7,6 +7,9 @@ import br.com.sartori.employeesmanagement.infrastructure.database.repository.Emp
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class InMemoryDataBaseImpl implements EmployeeRepository {
 
@@ -28,5 +31,11 @@ public class InMemoryDataBaseImpl implements EmployeeRepository {
     public Employee findById(Integer id) {
         EmployeeEntity employee = database.findById(id);
         return mapper.toDomain(employee);
+    }
+
+    @Override
+    public List<Employee> findAll() {
+        var entities = database.findAll();
+        return entities.stream().map(entity -> mapper.toDomain(entity)).collect(Collectors.toList());
     }
 }
