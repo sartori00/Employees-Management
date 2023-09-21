@@ -4,27 +4,16 @@ import br.com.sartori.employeesmanagement.application.core.domain.enums.PhoneTyp
 
 public class Phone {
 
-    private Long id;
-
     private PhoneType phoneType;
 
     private String phone;
 
-    public Phone(Long id, PhoneType phoneType, String phone) {
-        this.id = id;
+    public Phone(PhoneType phoneType, String phone) {
         this.phoneType = phoneType;
         this.phone = phone;
     }
 
     public Phone() {
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public PhoneType getPhoneType() {
