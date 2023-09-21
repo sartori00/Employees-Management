@@ -27,6 +27,9 @@ public class UpdateEmployeeUseCase implements UpdateEmployeeInputPort {
         finded.setPhones(employee.getPhones());
         finded.setAddress(employee.getAddress());
 
-        return updateEmployeeOutputPort.update(finded);
+        var asda = updateEmployeeOutputPort.update(finded);
+        //System.out.println(asda.getFullName());
+
+        return asda;
     }
 }

@@ -11,6 +11,7 @@ public class InsertEmployeeAdapter implements InsertEmployeeOutputPort {
 
     @Autowired
     private EmployeeRepository employeeRepository;
+
     @Override
     public Employee save(Employee employee) {
         return employeeRepository.save(employee);
