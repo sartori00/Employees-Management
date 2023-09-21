@@ -13,4 +13,6 @@ public interface EmployeeRepository {
     List<Employee> findAll();
 
     Employee update(Employee employee);
+
+    void deleteById(Integer id);
 }

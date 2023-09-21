@@ -45,4 +45,9 @@ public class InMemoryDataBaseImpl implements EmployeeRepository {
         var saved = database.update(entity);
         return mapper.toDomain(saved);
     }
+
+    @Override
+    public void deleteById(Integer id) {
+        database.deleteById(id);
+    }
 }

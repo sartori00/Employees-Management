@@ -41,4 +41,9 @@ public class InMemoryDatabase {
         finded.setAddress(entity.getAddress());
         return finded;
     }
+
+    public void deleteById(Integer id) {
+        var finded = this.findById(id);
+        database.remove(finded);
+    }
 }
